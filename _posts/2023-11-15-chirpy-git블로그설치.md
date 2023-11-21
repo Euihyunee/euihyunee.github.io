@@ -53,12 +53,11 @@ node -v
 ```bash
 echo "Gemfile.lock" >> .gitignore
 ```
-5. 해당 폴더를 git 저장소와 원격 연결합니다. 
+5. 해당 폴더를 git 저장소와 원격 연결합니다.  
 ```bash
 git init
 git remote add origin https://<token>@github.com/<git계정명>/<Repository이름>.git
-```
-
+```  
 > token을 이용하는 이유는 더 이상 github에서 https로 연결을 지원하지 않기 때문입니다. \
 > token을 생성하는 방법은 [여기](https://potato98.tistory.com/82)를 참조해주세요.
 {: .prompt-info }
@@ -116,7 +115,7 @@ GitHub Actions로 변경합니다.
 
 2. configure 클릭 
 3. commit 클릭 
-4. 이후 도메인에 'https://<자신의 깃허브 아이디>.github.io'를 입력하여 페이지가 배포된지 확인합니다.
+4. 이후 도메인에 'https://<자신의 깃허브 아이디>.github.io'를 입력하여 페이지가 배포된지 확인합니다.  
 ![Desktop View](https://github.com/Euihyunee/euihyunee.github.io/blob/main/assets/img/git/git-init-page.png?raw=true)
 
 
