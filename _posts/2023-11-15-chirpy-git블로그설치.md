@@ -37,6 +37,7 @@ brew install node
 node -v 
 ```
 
+
 ## 1. zip파일 다운로드한 경우 
 
 1. Github 자신의 repository를 생성합니다. 
