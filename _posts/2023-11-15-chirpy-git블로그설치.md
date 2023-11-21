@@ -1,5 +1,5 @@
 ---
-title: [Git Blog] Chirpy 테마를 이용한 블로그 만들기
+title: Chirpy 테마를 이용한 블로그 만들기
 date: 2023-11-15 10:49:33 +0900
 categories: [jekll, chirpy]
 tags: [jekyll, chirpy, bloh]
