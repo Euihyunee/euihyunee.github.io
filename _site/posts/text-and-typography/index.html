@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html lang="ko-KO" data-mode="dark">
   <!-- The Head -->
 
 <head>
@@ -51,29 +51,27 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Text and Typography" />
 <meta name="author" content="Cotes Chung" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="ko_KO" />
 <meta name="description" content="This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography." />
 <meta property="og:description" content="This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography." />
 <link rel="canonical" href="http://localhost:4000/posts/text-and-typography/" />
 <meta property="og:url" content="http://localhost:4000/posts/text-and-typography/" />
-<meta property="og:site_name" content="Chirpy" />
+<meta property="og:site_name" content="의현’s" />
 <meta property="og:image" content="https://chirpy-img.netlify.app/commons/devices-mockup.png" />
 <meta property="og:image:alt" content="Responsive rendering of Chirpy theme on multiple devices." />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-08-08T11:33:00+08:00" />
+<meta property="article:published_time" content="2019-08-08T12:33:00+09:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://chirpy-img.netlify.app/commons/devices-mockup.png" />
 <meta name="twitter:image:alt" content="Responsive rendering of Chirpy theme on multiple devices." />
 <meta property="twitter:title" content="Text and Typography" />
-<meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@cotes2020" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Cotes Chung","url":"https://github.com/cotes2020/"},"dateModified":"2019-08-08T11:33:00+08:00","datePublished":"2019-08-08T11:33:00+08:00","description":"This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.","headline":"Text and Typography","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Responsive rendering of Chirpy theme on multiple devices.","url":"https://chirpy-img.netlify.app/commons/devices-mockup.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/text-and-typography/"},"url":"http://localhost:4000/posts/text-and-typography/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Cotes Chung","url":"https://github.com/cotes2020/"},"dateModified":"2019-08-08T12:33:00+09:00","datePublished":"2019-08-08T12:33:00+09:00","description":"This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.","headline":"Text and Typography","image":{"lqip":"data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA","alt":"Responsive rendering of Chirpy theme on multiple devices.","url":"https://chirpy-img.netlify.app/commons/devices-mockup.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/text-and-typography/"},"url":"http://localhost:4000/posts/text-and-typography/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Text and Typography | Chirpy
+  <title>Text and Typography | 의현's
   </title>
 
   <!--
@@ -88,8 +86,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Chirpy">
-<meta name="application-name" content="Chirpy">
+<meta name="apple-mobile-web-app-title" content="의현's">
+<meta name="application-name" content="의현's">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -140,151 +138,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -299,14 +152,14 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://chirpy-img.netlify.app/assets/img/profile/profile.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
     <h1 class="site-title">
-      <a href="/">Chirpy</a>
+      <a href="/">의현's</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">A text-focused Jekyll theme</p>
+    <p class="site-subtitle fst-italic mb-0">개발자로서 기록하기 위한 블로그</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -366,21 +219,13 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
-    
 
     
       
 
       
         <a
-          href="https://github.com/github_username"
+          href="https://github.com/euihyunee"
           aria-label="github"
           
 
@@ -403,7 +248,7 @@
 
       
         <a
-          href="https://twitter.com/twitter_username"
+          href="https://twitter.com/"
           aria-label="twitter"
           
 
@@ -426,7 +271,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['example','domain.com'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['lobil7782','gmail.com'].join('@')"
           aria-label="email"
           
 
@@ -1937,21 +1782,21 @@ Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecena
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Text%20and%20Typography%20-%20Chirpy&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Ftext-and-typography%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Text%20and%20Typography%20-%20%EC%9D%98%ED%98%84's&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Ftext-and-typography%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Text%20and%20Typography%20-%20Chirpy&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Ftext-and-typography%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Text%20and%20Typography%20-%20%EC%9D%98%ED%98%84's&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Ftext-and-typography%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Ftext-and-typography%2F&text=Text%20and%20Typography%20-%20Chirpy" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Ftext-and-typography%2F&text=Text%20and%20Typography%20-%20%EC%9D%98%ED%98%84's" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2538,7 +2383,7 @@ There are two wa...
   <p>
     ©
     <time>2023</time>
-    <a href="https://twitter.com/username">your_full_name</a>.
+    <a href="https://github.com/euihyunee">euihyunee</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -2979,7 +2824,7 @@ There are two wa...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js,npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/ko.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js,npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
 
 
 
