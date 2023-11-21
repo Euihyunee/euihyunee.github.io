@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Chirpy</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-11-21T18:06:33+08:00</updated>
+  <updated>2023-11-21T21:45:48+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/" rel="alternate" type="text/html" title="Chirpy 테마를 이용한 블로그 만들기" />
     <published>2023-11-15T09:49:33+08:00</published>
   
-    <updated>2023-11-21T18:02:35+08:00</updated>
+    <updated>2023-11-21T21:30:52+08:00</updated>
   
     <id>http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/</id>
     <content src="http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/" />
@@ -67,19 +67,15 @@ Jekyll Chirpy Theme 가져오기
 
   Ruby 사이트에서 버전 3이상을 다운받아 줍니다.
 윈도우 환경에서는 Start Command Prompt with Ruby 프롬프트 창을 이용해주세요.
-    ruby -v
+    brew install rbenv
+ruby -v
     
   
   Node.js를 설치해줍니다.
-    node -v 
+    brew install node
+node -v 
     
-  
-
-
-1. zip파일 다운로드한 경우
-
-
-  Github 자신의...
+...
     </summary>
   
 

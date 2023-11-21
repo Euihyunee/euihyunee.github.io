@@ -153,7 +153,7 @@ gem install webrick
 $ npm install && npm run build
 ```
 
-> node.js 모듈을 설치하지 않으면 `assets/js/dist/\*min.js Not Found` 에러 발생과 함께 블로그 기능이 정상적으로 동작하지 않습니다.
+> node.js 모듈을 설치하지 않으면 `assets/js/dist/*min.js Not Found` 에러 발생과 함께 블로그 기능이 정상적으로 동작하지 않습니다.
 {: .prompt-warning }
 
 > 윈도우에서는  \
