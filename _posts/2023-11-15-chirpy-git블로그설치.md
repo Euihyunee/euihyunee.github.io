@@ -29,7 +29,7 @@ mermaid: true
     - Repository 이름은 '<자신의 github 계정명>.github.io'로 생성합니다. 
     - public으로 설정합니다. 
     - 'Add a Readme file'은 체크 해제하여 branch를 생성하지 않도록 합니다. 
-    ![Desktop View](https://github.com/Euihyunee/euihyunee.github.io/tree/main/assets/img/git/github-new-repository.png)
+    ![Desktop View](//assets/img/git/github-new-repository.png)
 2. local에서 원하는 경로에 zip파일을 압축 해제합니다. 
 3. 터미널로 해당 폴더에 접속합니다. 
 4. '.gitignore' 파일에 제외할 파일을 추가해줍니다. 
@@ -57,7 +57,7 @@ $ git push -u origin main
 
 1. 위의 내용을 마쳤다면 github 페이지로 들어가 자신의 Repostory - Settings - Pages - Build and Deployment에서  
 GitHub Actions로 변경합니다. 
-![Desktop View](https://github.com/Euihyunee/euihyunee.github.io/tree/main/assets/img/git/git-action-1.png)
+![Desktop View](//assets/img/git/git-action-1.png)
 2. configure 클릭 
 <사진입력>
 3. commit 클릭 
@@ -67,7 +67,7 @@ GitHub Actions로 변경합니다.
     > Github repository의 Action 탭에서 실행이 끝나야 들어가집니다. \
     > 노란불이면 실행 중, 초록불이면 완료, 빨간불이면 에러입니다. 
 
-![Desktop View](https://github.com/Euihyunee/euihyunee.github.io/tree/main/assets/img/git/git-init-page.png)
+![Desktop View](//assets/img/git/git-init-page.png)
     
 5. 배포가 성공적으로 되었다면 로컬에서 pull을 통해 바뀐 내용을 가져옵니다. 
 ```shell
