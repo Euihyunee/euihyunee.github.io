@@ -2,12 +2,11 @@
 title: Chirpy 테마를 이용한 블로그 만들기
 date: 2023-11-15 10:49:33 +0900
 autor: 의현's
-categories: [jekll, chirpy]
-tags: [jekyll, chirpy, bloh]
+categories: [Github, chirpy]
+tags: [jekyll, chirpy, blog]
 description: jekyll, chirpy, blog, 의현
 toc: true
 toc_sticky: true
-toc_label: 목차
 math: true
 mermaid: true
 ---
