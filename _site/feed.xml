@@ -1,0 +1,294 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>의현's</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2024-06-03T12:35:23+09:00</updated>
+  <author>
+    <name>euihyunee</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2024 euihyunee </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Chirpy 테마에서 글 작성하기</title>
+    <link href="http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/" rel="alternate" type="text/html" title="Chirpy 테마에서 글 작성하기" />
+    <published>2024-06-03T10:14:01+09:00</published>
+  
+    <updated>2024-06-03T10:14:01+09:00</updated>
+  
+    <id>http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/</id>
+    <content src="http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/" />
+    <author>
+      <name>의현's</name>
+    </author>
+
+  
+    
+    <category term="Github" />
+    
+    <category term="Chirpy" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      이름 지정 및 경로
+
+_posts 폴더에 파일을 하나 생성한 후 형식은 YYYY-MM-DD-파일명.md 로 맞춰줍니다. 포스트 파일의 확장자는 md이어야 한다. 파일명은 한글을 사용해도 무관합니다.
+
+Chirpy 테마 머릿말 작성
+
+내용을 작성하기 전에 다음과 같은 형식으로 포스트의 정보를 머릿말로 작성해야 한다.
+
+--- 
+title: "TITLE"
+description: "chirpy 글 작성 요령"
+date : YYYY-MM-DD HH:MM:SS +/-TTTT
+categories: [TOP_CATEGORIE, SUB_CATEGORIE]
+tags: [TAG] 
+autor: nickname
+toc: true
+toc_sticky: true
+---
+
+
+
+머릿말은 ---로 쓰는 영역을 구분해 주어야 한다....
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Chirpy 테마 커스터마이징</title>
+    <link href="http://localhost:4000/posts/chirpy-config%EC%88%98%EC%A0%95/" rel="alternate" type="text/html" title="Chirpy 테마 커스터마이징" />
+    <published>2023-11-22T14:21:00+09:00</published>
+  
+    <updated>2023-11-22T14:21:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/chirpy-config%EC%88%98%EC%A0%95/</id>
+    <content src="http://localhost:4000/posts/chirpy-config%EC%88%98%EC%A0%95/" />
+    <author>
+      <name>euihyunee</name>
+    </author>
+
+  
+    
+    <category term="Github" />
+    
+    <category term="Chirpy" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  이전 글을 통해 깃허브 블로그를 만들었습니다. 
+본 글에서는 블로그 커스터마이징을 다루겠습니다.
+
+
+_config.yml 파일 수정
+
+_config.yml 파일은 깃허브 페이지나 다른 정적 사이트 생성기를 사용하여 만든 블로그나 웹사이트의 설정 파일입니다. 이 파일은 해당 사이트의 설정과 구성 요소들을 정의하여 사이트의 title, language, avatar 등을 바꿀 수 있습니다.
+
+항목
+
+
+  
+    
+      항목
+      값
+      설명
+    
+  
+  
+    
+      lang
+      ko-KO 또는 en
+      언어를 설정하는 곳입니다. 기본값은 en이며 한글로 변경하고 싶으시다면 ko-KR로 수정하시면 됩니다.
+    
+    
+      timezone
+  ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Chirpy 테마를 이용한 블로그 만들기</title>
+    <link href="http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/" rel="alternate" type="text/html" title="Chirpy 테마를 이용한 블로그 만들기" />
+    <published>2023-11-15T10:49:33+09:00</published>
+  
+    <updated>2023-11-15T10:49:33+09:00</updated>
+  
+    <id>http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/</id>
+    <content src="http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/" />
+    <author>
+      <name>euihyunee</name>
+    </author>
+
+  
+    
+    <category term="github" />
+    
+    <category term="chirpy" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  Jekyll Chirpy테마를 이용하여 깃 블로그 만들기에 대하여 알아보겠습니다. 
+제가 직접 하며 느꼈던 에러 또한 정리했습니다.
+
+
+
+
+Jekyll Chirpy Theme 가져오기
+
+  Chirpy github page에서 zip파일을 다운하거나
+  Chirpy github page에서 fork하는 방법이 있습니다.
+
+
+필자는 첫 번째 방법을 이용했습니다.
+
+사전 준비물
+
+  Ruby 사이트에서 버전 3이상을 다운받아 줍니다.
+윈도우 환경에서는 Start Command Prompt with Ruby 프롬프트 창을 이용해주세요.
+    brew install rbenv
+ruby -v
+    
+  
+  Node.js를 설치해줍니다.
+    brew install node
+node -v 
+    
+...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>chirpy 설치 시 발생하는 오류 해결하기</title>
+    <link href="http://localhost:4000/posts/chirpy-%EC%84%A4%EC%B9%98-%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/" rel="alternate" type="text/html" title="chirpy 설치 시 발생하는 오류 해결하기" />
+    <published>2023-06-21T14:49:35+09:00</published>
+  
+    <updated>2023-06-21T14:49:35+09:00</updated>
+  
+    <id>http://localhost:4000/posts/chirpy-%EC%84%A4%EC%B9%98-%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/</id>
+    <content src="http://localhost:4000/posts/chirpy-%EC%84%A4%EC%B9%98-%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/" />
+    <author>
+      <name>isotope</name>
+    </author>
+
+  
+    
+    <category term="블로그 운영" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      chirpy 설치 후 초기 설정 진행 방법
+
+jekyll 테마를 모아놓은 사이트에서 chirpy 테마가 마음에 들어서 설치했습니다.
+그런데 로컬 저장소와 연동하기 위해 push하면 이런저런 오류가 발생해서 상당히 곤란했습니다.
+
+사흘 정도를 오류 해결에만 몰두했는데, 해결법은 “매뉴얼대로 설치하기”였습니다.
+아래의 chirpy 공식 매뉴얼을 따라 설치하면 대부분 문제가 해결되었습니다.
+
+https://chirpy.cotes.page/posts/getting-started/
+
+그런데 이 매뉴얼에는 큰 걸림돌이 있습니다. bash tools/init명령어의 수행입니다. 리눅스 환경에서만 동작하는 명령이라 원도우에서는 사용할 길이 없습니다.
+이 명령을 실행하면 코드 및 템플릿 배포를 위해 존재하는 불필요한 ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>test</title>
+    <link href="http://localhost:4000/posts/first/" rel="alternate" type="text/html" title="test" />
+    <published>2023-06-21T13:31:00+09:00</published>
+  
+    <updated>2023-06-21T13:31:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/first/</id>
+    <content src="http://localhost:4000/posts/first/" />
+    <author>
+      <name>isotope</name>
+    </author>
+
+  
+    
+    <category term="블로그 운영" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      head2
+
+테스트 페이지입니다.
+
+head3
+
+
+  list
+
+
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
