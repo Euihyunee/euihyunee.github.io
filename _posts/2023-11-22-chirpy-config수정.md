@@ -1,15 +1,8 @@
 ---
 title: Chirpy 테마 커스터마이징 
 date: 2023-11-22 14:21 +0900
-autor: 의현's
 categories: [Github, Chirpy]
 tags: [jekyll, chirpy, blog]
-description: jekyll, chirpy, blog, 의현
-toc: true
-toc_sticky: true
-toc_label : 목차
-math: true
-mermaid: true
 ---
 
 > 이전 글을 통해 깃허브 블로그를 만들었습니다. \

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>의현's</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-06-03T13:17:05+09:00</updated>
+  <updated>2024-06-03T13:23:09+09:00</updated>
   <author>
     <name>euihyunee</name>
     <uri>http://localhost:4000/</uri>
@@ -29,7 +29,7 @@
     <id>http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/</id>
     <content src="http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/" />
     <author>
-      <name>의현's</name>
+      <name>euihyunee</name>
     </author>
 
   
@@ -154,9 +154,9 @@ _config.yml 파일은 깃허브 페이지나 다른 정적 사이트 생성기�
 
   
     
-    <category term="github" />
+    <category term="Github" />
     
-    <category term="chirpy" />
+    <category term="Chirpy" />
     
   
 
@@ -196,94 +196,6 @@ ruby -v
 node -v 
     
 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>chirpy 설치 시 발생하는 오류 해결하기</title>
-    <link href="http://localhost:4000/posts/chirpy-%EC%84%A4%EC%B9%98-%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/" rel="alternate" type="text/html" title="chirpy 설치 시 발생하는 오류 해결하기" />
-    <published>2023-06-21T14:49:35+09:00</published>
-  
-    <updated>2023-06-21T14:49:35+09:00</updated>
-  
-    <id>http://localhost:4000/posts/chirpy-%EC%84%A4%EC%B9%98-%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/</id>
-    <content src="http://localhost:4000/posts/chirpy-%EC%84%A4%EC%B9%98-%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0/" />
-    <author>
-      <name>isotope</name>
-    </author>
-
-  
-    
-    <category term="블로그 운영" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      chirpy 설치 후 초기 설정 진행 방법
-
-jekyll 테마를 모아놓은 사이트에서 chirpy 테마가 마음에 들어서 설치했습니다.
-그런데 로컬 저장소와 연동하기 위해 push하면 이런저런 오류가 발생해서 상당히 곤란했습니다.
-
-사흘 정도를 오류 해결에만 몰두했는데, 해결법은 “매뉴얼대로 설치하기”였습니다.
-아래의 chirpy 공식 매뉴얼을 따라 설치하면 대부분 문제가 해결되었습니다.
-
-https://chirpy.cotes.page/posts/getting-started/
-
-그런데 이 매뉴얼에는 큰 걸림돌이 있습니다. bash tools/init명령어의 수행입니다. 리눅스 환경에서만 동작하는 명령이라 원도우에서는 사용할 길이 없습니다.
-이 명령을 실행하면 코드 및 템플릿 배포를 위해 존재하는 불필요한 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>test</title>
-    <link href="http://localhost:4000/posts/first/" rel="alternate" type="text/html" title="test" />
-    <published>2023-06-21T13:31:00+09:00</published>
-  
-    <updated>2023-06-21T13:31:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/first/</id>
-    <content src="http://localhost:4000/posts/first/" />
-    <author>
-      <name>isotope</name>
-    </author>
-
-  
-    
-    <category term="블로그 운영" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      head2
-
-테스트 페이지입니다.
-
-head3
-
-
-  list
-
-
     </summary>
   
 

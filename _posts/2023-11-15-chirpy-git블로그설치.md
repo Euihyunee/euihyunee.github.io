@@ -1,16 +1,10 @@
 ---
 title: Chirpy 테마를 이용한 블로그 만들기
 date: 2023-11-15 10:49:33 +0900
-autor: 의현's
-categories: [github, chirpy]
+categories: [Github, Chirpy]
 tags: [jekyll, chirpy, blog]
-description: jekyll, chirpy, blog, 의현
-toc: true
-toc_sticky: true
-toc_label: 목차
-math: true
-mermaid: true
 ---
+
 
 > Jekyll Chirpy테마를 이용하여 깃 블로그 만들기에 대하여 알아보겠습니다. \
 > 제가 직접 하며 느꼈던 에러 또한 정리했습니다. 
