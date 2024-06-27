@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>의현's</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-06-27T18:07:33+09:00</updated>
+  <updated>2024-06-27T18:50:02+09:00</updated>
   <author>
     <name>euihyunee</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/" rel="alternate" type="text/html" title="Chirpy 테마에서 글 작성하기" />
     <published>2024-06-03T10:14:01+09:00</published>
   
-    <updated>2024-06-27T17:32:44+09:00</updated>
+    <updated>2024-06-27T18:42:38+09:00</updated>
   
     <id>http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/</id>
     <content src="http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/" />
@@ -57,7 +57,7 @@
   먼저 _posts 풀더에 파일을 하나 생성한 후 형식은 YYYY-MM-DD-파일명.md로 맞춰 생성합니다. 포스트 파일의 확장자는 반드시 md이어야 하며 파일명은 한글을 사용해도 무관합니다.
 
 
-1. Chirpy 테마 머릿말 작성
+Chirpy 테마 머릿말 작성
 
 
   파일을 생성한 후 내용을 작성하기 전에 다음과 같은 형식으로 포스트의 정보를 머릿말로 작성해야 한다.
@@ -66,7 +66,7 @@
 --- 
 title: "TITLE"
 description: "chirpy 글 작성 요령"
-date : YYYY-MM-DD HH:MM:SS ...
+date : YYYY-MM-DD HH:MM:SS +/-...
     </summary>
   
 
