@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>의현's</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-06-03T13:23:09+09:00</updated>
+  <updated>2024-06-03T13:27:45+09:00</updated>
   <author>
     <name>euihyunee</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/" rel="alternate" type="text/html" title="Chirpy 테마에서 글 작성하기" />
     <published>2024-06-03T10:14:01+09:00</published>
   
-    <updated>2024-06-03T10:14:01+09:00</updated>
+    <updated>2024-06-03T13:24:19+09:00</updated>
   
     <id>http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/</id>
     <content src="http://localhost:4000/posts/chirpy-%EC%9E%91%EC%84%B1%EB%B2%95/" />
@@ -81,7 +81,7 @@ toc_sticky: true
     <link href="http://localhost:4000/posts/chirpy-config%EC%88%98%EC%A0%95/" rel="alternate" type="text/html" title="Chirpy 테마 커스터마이징" />
     <published>2023-11-22T14:21:00+09:00</published>
   
-    <updated>2023-11-22T14:21:00+09:00</updated>
+    <updated>2024-06-03T13:24:19+09:00</updated>
   
     <id>http://localhost:4000/posts/chirpy-config%EC%88%98%EC%A0%95/</id>
     <content src="http://localhost:4000/posts/chirpy-config%EC%88%98%EC%A0%95/" />
@@ -144,7 +144,7 @@ _config.yml 파일은 깃허브 페이지나 다른 정적 사이트 생성기�
     <link href="http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/" rel="alternate" type="text/html" title="Chirpy 테마를 이용한 블로그 만들기" />
     <published>2023-11-15T10:49:33+09:00</published>
   
-    <updated>2023-11-15T10:49:33+09:00</updated>
+    <updated>2024-06-03T13:24:19+09:00</updated>
   
     <id>http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/</id>
     <content src="http://localhost:4000/posts/chirpy-git%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%84%A4%EC%B9%98/" />
