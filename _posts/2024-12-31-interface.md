@@ -22,7 +22,7 @@ tags: [interface, api]
 하드웨어 인터페이스는 물리적인 기기들을 연결하여 상호 작용할 수 있게 하는 장치나 방법입니다. 하드웨어 인터페이스는 다양한  `버스`, `기억장치`, `입출력 장치`와 같은 구성 요소들로 데이터와 신호를 주고 받는다.
 > 하드웨어들은 데이터 처리, 저장, 표시, 통신의 기능을 수행합니다.
 
-![hardware](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/hardware_interface.png)
+![hardware](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/hardware_interface.png?raw=true)
 
 ### 기능과 역활 
 1. 데이터 전송 : 기기 간 정보 교환을 가능하게 합니다.   
