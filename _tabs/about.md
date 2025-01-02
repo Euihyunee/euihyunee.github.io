@@ -12,6 +12,7 @@ order: 4
 - **관심분야** : Spring Boot, backend, database
 - **contact**
   - lobil7782@gmail.com
+  - https://github.com/Euihyunee
 ---
 
 ### certificates
