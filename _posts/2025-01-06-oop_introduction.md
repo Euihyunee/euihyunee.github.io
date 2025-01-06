@@ -20,7 +20,11 @@ tags: [Java, OOP]
 
 ![oops_concept](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/oops_concept.png?raw=true)
 
+<blockquote data-ke-style="style1"><span style="font-family: 'Noto Serif KR';">An object is a class instance or an array.<br><br></span></blockquote>
+
 #### 1. 객체 
+
+
 
 #### 2. 클래스 
 
