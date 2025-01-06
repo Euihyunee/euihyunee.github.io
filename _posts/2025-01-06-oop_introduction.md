@@ -15,6 +15,9 @@ tags: [Java, OOP]
 
 ## OOP, 기본 구성 요소
 
+![obj_class.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/obj_class.png?raw=true)
+
+
 #### 1. 객체(Object) 
 
 > 컴퓨터 과학에서 객체는 클래스에서 정의한 것을 토대로 메모리에 할당된 것으로 프로그램에서 사용되는 데이터 또는 식별자에 의해 참조되는 공간을 의미하며, 변수, 자료 구조, 함수 또는 메소드가 될 수 있다. - [위키백과](https://ko.wikipedia.org/wiki/%EA%B0%9D%EC%B2%B4_(%EC%BB%B4%ED%93%A8%ED%84%B0_%EA%B3%BC%ED%95%99))
