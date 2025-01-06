@@ -1,5 +1,5 @@
 ---
-title: [Java] OOP Part1. 객체 지향 프로그래밍이란? 
+title: "[Java] OOP Part1. 객체 지향 프로그래밍이란?"
 date: 2025-01-06 11:28 +0900
 categories: [Java]
 tags: [Java, OOP]

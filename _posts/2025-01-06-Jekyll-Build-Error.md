@@ -1,5 +1,5 @@
 ---
-title: 📌 Jekyll Build Error
+title: "📌 Jekyll Build Error"
 date: 2025-01-06 14:13 +0900
 categories: [Github, Chirpy]
 tags: [Github Blog, Jekyll, Chirpy]
