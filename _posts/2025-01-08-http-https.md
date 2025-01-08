@@ -1,7 +1,7 @@
 ---
 title: "🌐HTTP의 동작방식과 HTTPS와의 차이 feat. TCP"
 date: 2025-01-08 08:49 +0900
-categories: [cs]
+categories: [CS]
 tags: [http, https, TCP, ssl, ca]
 ---
 

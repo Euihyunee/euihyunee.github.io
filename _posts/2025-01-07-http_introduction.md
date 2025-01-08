@@ -1,7 +1,7 @@
 ---
 title: "🌐HTTP의 버전차이에 관하여"
 date: 2025-01-07 13:32 +0900
-categories: [cs]
+categories: [CS]
 tags: [http, pipelining]
 ---
 
