@@ -1,8 +1,8 @@
 ---
-title: "🌐HTTP의 동작방식과 HTTPS와의 차이"
+title: "🌐HTTP의 동작방식과 HTTPS와의 차이 feat. TCP"
 date: 2025-01-08 08:49 +0900
 categories: [cs]
-tags: [http, https, ssl, ca]
+tags: [http, https, TCP, ssl, ca]
 ---
 
 > 전 글에서 HTTP의 개념과 HTTP의 진화과정에 대해 알아보았습니다. 이번 글에서는 HTTP가 웹에서 어떻게 동작하는지에 대해 설명하고, HTTPS는 무엇인지, HTTP와 차이가 무엇인지에 대해 알아보겠습니다. 
