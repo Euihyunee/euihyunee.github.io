@@ -87,7 +87,7 @@ public class Person{ // 클래스
 Person person = new Person();
 ```
 
-## 객체 속성, 메서드 접근
+## 객체 사용
 
 각 객체의 속성과 메서드에 접근하는 방식에 대해 살펴보겠습니다.
 
