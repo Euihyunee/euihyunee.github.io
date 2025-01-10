@@ -69,7 +69,9 @@ class People{
     }
 }
 ```
+
 > `this`는 현재 객체의 인스턴스 변수를 가리키는 데 사용됩니다. 주로 매개변수와 인스턴스 변수의 이름이 같을 때 구분하기 위해 사용합니다. 
+
 ```java
 People people = new People("John");
 // 출력 : John객체 생성
