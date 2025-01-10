@@ -36,6 +36,7 @@ class People{
 ```java
 People people = new People();
 ```
+
 2. No-Args Constructor : 매개변수가 없는 생성자를 말한다. 형태는 생성자와 유사합니다. 멤버 변수를 초기화하고 객체 생성 시 원하는 로직을 수행할 수 있다는 점이 기본 생성자와의 차이점이다.
 
 ```java 
@@ -55,6 +56,7 @@ People people = new People();
 System.out.println(people.name);
 // 출력 : 초기값
 ```
+
 3. 매개변수 생성자 : 하나 이상의 매개변수를 갖는 생성자를 말합니다. 값을 받아서 객체를 초기화하고 로직을 작성할 수 있습니다.
 
 ```java
