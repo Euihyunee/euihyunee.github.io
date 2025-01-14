@@ -193,3 +193,5 @@ CPU가 이 영역에서 명령어를 가져와 실행합니다.
 |시간 제한 대기(Timed_Waiting)|대기 상태와 유사하지만, 지정된 시간 동안만 대기하는 상태입니다.|
 |종료(Terminated)|스레드의 실행이 완료되었거나 강제로 중지된 상태입니다.|
 
+![thread_lifecycle.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/thread_lifecycle.png?raw=true)
+
