@@ -1,8 +1,8 @@
 ---
-title: "💬멀티 스레딩의 성능에 대하여(작성중)"
+title: "💬멀티 스레딩의 성능에 대하여"
 date: 2025-01-16 16:45 +0900
 categories: [CS]
-tags: [multi threading, thread]
+tags: [multi threading, thread, thread pool]
 ---
 
 > [저번 글](https://euihyunee.github.io/posts/multi_process_thread/)에서 멀티 프로세스와 멀티 스레드에 대해 알아보았습니다. 이번 글에서는 멀티 스레딩의 성능에 대해 살펴보겠습니다. 멀티 스레드와 멀티 스레딩은 이름처럼 같은 개념이지만 약간의 차이가 있습니다. 멀티 스레딩은 하나의 프로세스 내에서 여러 개의 스레드를 동시에 실행하는 프로그래밍 기법을 의미합니다. 멀티 스레딩의 결과로 생성된 여러 개의 스레드가 멀티 스레드입니다. 그럼 멀티 스레딩에 대해서 알아보겠습니다. 
