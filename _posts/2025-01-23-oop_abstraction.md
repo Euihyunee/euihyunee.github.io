@@ -25,7 +25,7 @@ tags: [Java, OOP, abstraction]
 
 ### abstract을 통한 추상화
 
-자바에서는 `abstract` 키워드를 사용하여 추상 클래스를 선언하며, 내부에 `abstract`와 메서드를 같이 사용하여 <span style="background-color: #fff5b1">하나 이상의 추상 메서드를 포함</span>할 수 있습니다.
+자바에서는 `abstract` 키워드를 사용하여 추상 클래스를 선언하며, 내부에 `abstract`와 메서드를 같이 사용하여 <span style="color: #fff5b1">하나 이상의 추상 메서드를 포함</span>할 수 있습니다.
 
 ```java
 // 추상 클래스
