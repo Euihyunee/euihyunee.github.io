@@ -769,6 +769,13 @@ $btn-mb: 0.5rem;
     // color: rgba(134, 133, 133, 0.99);
     // margin-top: 1.25rem;
     // margin-bottom: 0.5rem;
+    font-weight: 900;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: 0.25px;
+    color: rgba(254, 254, 254, 99%);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
 
     // a {
     //   @extend %clickable-transition;
@@ -776,11 +783,7 @@ $btn-mb: 0.5rem;
     // }
     a {
       @extend %clickable-transition;
-
-      font-weight: 900;
-      font-size: 1.5rem;
-      letter-spacing: 0.5px;
-      color: rgba(254, 254, 254, 99%);
+      @extend %sidebar-link-hover;
     }
   }
 
@@ -796,15 +799,18 @@ $btn-mb: 0.5rem;
     // user-select: none;
 
     font-size: 95%;
+    color: rgba(254, 254, 254, 99%);
+    margin-top: 0.25rem;
+    word-spacing: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
     /*
     color: var(--sidebar-muted-color);
     */
-    color: rgba(254, 254, 254, 99%);
-    line-height: 1.2rem;
-    word-spacing: 1px;
-    margin: 0.5rem 1.5rem 0.5rem 1.5rem;
-    min-height: 3rem; // avoid vertical shifting in multi-line words
-    user-select: none;
+
   }
 
   ul {
