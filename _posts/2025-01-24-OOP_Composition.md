@@ -1,5 +1,5 @@
 ---
-title: "[Java] OOP Part7. Composition 이해하기"
+title: "[Java] OOP Part8. Composition 이해하기"
 date: 2025-01-24 10:04 +0900
 categories: [Java]
 tags: [Java, OOP, Compostion]

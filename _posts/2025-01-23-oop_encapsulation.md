@@ -1,5 +1,5 @@
 ---
-title: "[Java] OOP Part6. 캡슐화(Encapsulation)"
+title: "[Java] OOP Part7. 캡슐화(Encapsulation)"
 date: 2025-01-23 12:17 +0900
 categories: [Java]
 tags: [Java, OOP, encapsulation]
