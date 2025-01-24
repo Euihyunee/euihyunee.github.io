@@ -773,7 +773,8 @@ $btn-mb: 0.5rem;
     font-size: 1.75rem;
     line-height: 1.2;
     letter-spacing: 0.25px;
-    color: rgba(254, 254, 254, 99%);
+    color: var(--post-list-text-color);
+    
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
     
@@ -800,7 +801,7 @@ $btn-mb: 0.5rem;
     // user-select: none;
 
     font-size: 95%;
-    color: rgba(254, 254, 254, 99%);
+    color: var(--post-list-text-color);
     margin-top: 0.25rem;
     word-spacing: 1px;
     -webkit-user-select: none;
