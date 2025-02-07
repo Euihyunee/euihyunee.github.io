@@ -31,6 +31,8 @@ tags: [Transaction, ACID]
 이미지 크기는 width/height 속성으로 조정 가능하며, 
 {: .left} 클래스가 왼쪽 정렬을 담당합니다.
 
+<br>
+
 <div style="display: flex; align-items: center; gap: 20px;">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScRCenBN5JIfCZT16wTy-MCe0oa8peTDggUA&s" alt="예제" style="width: 75px;">
   <p>이미지와 동일 선상에 표시될 텍스트 내용</p>
