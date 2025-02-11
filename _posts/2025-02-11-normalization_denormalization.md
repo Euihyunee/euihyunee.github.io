@@ -38,7 +38,7 @@ tags: [Normaliztion, DeNormalization, RDMBS]
 
 ### 제 1정규형(1NF)
 
-![first_normalization.png]((https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/first_normalization.png?raw=true))
+![first_normalization.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/first_normalization.png?raw=true)
 
 초기 테이블은 '강의명' 속성이 다중값을 가지고 있기 때문에 '강의명' 속성을 
 
@@ -47,7 +47,7 @@ tags: [Normaliztion, DeNormalization, RDMBS]
 
 ### 제 2정규형(2NF)
 
-![second_normalization.png]((https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/second_normalization.png?raw=true))
+![second_normalization.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/second_normalization.png?raw=true)
 
 
 - 1NF를 만족하며, 부분 함수적 종속을 제거합니다.
@@ -55,7 +55,7 @@ tags: [Normaliztion, DeNormalization, RDMBS]
 
 ### 제 3정규형(3NF)
 
-![third_normalization.png]((https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/third_normalization.png?raw=true))
+![third_normalization.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/third_normalization.png?raw=true)
 
 - 2NF를 만족하며, 이행적 함수 종속을 제거합니다.
 > 이행적 함수 종속: X->Y, Y->Z일 때, X->Z가 성립
@@ -85,7 +85,7 @@ tags: [Normaliztion, DeNormalization, RDMBS]
 
 ## 반정규화 절차
 
-![semi_normalization.png]((https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/semi_normalization.png?raw=true))
+![semi_normalization.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/semi_normalization.png?raw=true)
 
 반정규화를 수행할 때는 데이터의 일관성과 무결성을 고려해야 하며, 과도한 정규화는 오히려 성능을 저하시킬 수 있으므로 신중하게 접근해야 합니다.
 
@@ -95,7 +95,7 @@ tags: [Normaliztion, DeNormalization, RDMBS]
 
 ### 테이블 반정규화
 
-![normalization_table.png]((https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/normalization_table.png?raw=true))
+![normalization_table.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/normalization_table.png?raw=true)
 
 - **테이블 병합**: 자주 조인되는 테이블을 하나로 통합하여 조인 연산을 줄입니다.
 - **테이블 분할**:
