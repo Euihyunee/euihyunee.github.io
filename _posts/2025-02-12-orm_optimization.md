@@ -2,7 +2,7 @@
 title: "📋 ORM의 개념 & 성능 최적화 방법"
 date: 2025-02-12 12:10 +0900
 categories: [Database]
-tags: [ORM]
+tags: [ORM, N+1, JPA, Fetch, Bulk, Paging]
 ---
 
 ![orm.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/orm.png?raw=true)
