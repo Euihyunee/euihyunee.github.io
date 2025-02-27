@@ -2,7 +2,7 @@
 title: "💬 로드 밸런싱과 리버스 프록시에 대해서"
 date: 2025-02-26 14:27 +0900
 categories: [CS]
-tags: [Network, DNS, CDN]
+tags: [Network, Load Balancing, Reverse Proxy, L4, L7]
 ---
 
 ## 로드 밸런싱
