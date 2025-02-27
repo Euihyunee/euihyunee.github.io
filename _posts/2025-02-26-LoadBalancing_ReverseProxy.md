@@ -7,10 +7,9 @@ tags: [Network, DNS, CDN]
 
 ## 로드 밸런싱
 
+로드 밸런싱(Load Balancing)은 네트워크 트래픽을 여러 서버에 분산시켜 서버의 부하를 균등하게 분배하는 기술입니다. 하나의 서버에 많은 트래픽이 들어온다면 성능 저하 및 서버가 다운될 수 있습니다. 이를 해결하기 위해 여러 서버를 두어 이 서버들에게 트래픽을 할당해주는 것이 로드 밸런서(로드 밸런싱을 위한 장치)의 역활입니다. 
 
 ![load_balancing.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/load_balancing.png?raw=true)
-
-로드 밸런싱(Load Balancing)은 네트워크 트래픽을 여러 서버에 분산시켜 서버의 부하를 균등하게 분배하는 기술입니다. 하나의 서버에 많은 트래픽이 들어온다면 성능 저하 및 서버가 다운될 수 있습니다. 이를 해결하기 위해 여러 서버를 두어 이 서버들에게 트래픽을 할당해주는 것이 로드 밸런서(로드 밸런싱을 위한 장치)의 역활입니다. 
 
 ## 로드 밸런싱의 주요 기능
 
@@ -102,9 +101,9 @@ L7 로드밸런서는 애플리케이션 계층(HTTP/HTTPS)에서 동작하며, 
 
 ## 리버스 프록시 
 
-![reverse_proxy.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/reverse_proxy.png?raw=true)
-
 리버스 프록시는 클라이언트와 서버 사이에 위치하여 클라이언트의 요청을 서버로 전달하고 서버의 응답을 클라이언트에게 전달하는 중개자 역활을 합니다. 이는 로드 밸런싱 기능 외에도 캐싱, SSL 종료, 압축, 보안 등 다양한 기능을 제공합니다. 로드 밸런서는 주로 트래픽 분산에 집중하고, 리버스 프록시는 더 유연하고 다양한 설정이 가능합니다.
+
+![reverse_proxy.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/reverse_proxy.png?raw=true)
 
 리버스 프록시는 웹 서버 앞에 위치하여 클라이언트의 요청을 가로채는 서버입니다. 가로친 요청을 서버로 요청을 보내고 응답을 받아와 다시 클라이언트에게 전달합니다. 이는 클라이언트에게 서버의 IP 주소를 노출시키지 않고, 서버 정보를 은닉하여 부적절한 접근을 제안하는 역활을 할 수 있어 보안을 강화할 수 있습니다. 외에도 다양한 역활을 하며 좀 더 자세히 다뤄보겠습니다.
 
