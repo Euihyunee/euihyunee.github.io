@@ -153,7 +153,7 @@ IDS와 IPS는 OSI 3~7계층에서 동작합니다. 이는 방화벽과 달리 �
 
 ### 방화벽과의 연계 방식
 
-![fw_ips_ids.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/fw_ips_ids.png?raw=true)
+![FW-IPS-IDS.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/FW-IPS-IDS.png?raw=true)
 
 1. Basic Access Control(Firewall, 방화벽):  
 네트워크에 대한 기본적인 접근 제어를 수행하여 허용된 트래픽만 통과시킵니다.
