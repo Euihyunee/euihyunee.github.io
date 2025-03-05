@@ -24,6 +24,38 @@ tags: [Docker, Docker File, Docker Build]
 |EXPOSE|컨테이너가 노출할 포트 정의|`EXPOSE80`|
 |ENTRYPOINT|컨테이너 시작 시 실행 명령|`ENTRYPOINT ["node","app.js]`|
 
+## Docker File 가이드 라인
+
+Docker File 작성 가이드 라인에서 주요 원칙은 이미지 최적화, 보안 강화, 유지보수성을 고려하는 것입니다.
+
+- 베이스 이미지 선택
+    - 공식 이미지 사용 권장(예: `eclipse-temurin, amazoncorretto`)
+    - 특정 버전 태그 명시(예: `17-jdk` 대신 `17.0.3_7-jdk`)
+    - 경량화된 이미지 선택(예: `-alpine, -slim`)
+- 이미지 레이어 최적화
+    - 불필요 파일 제거
+    - 연관된 RUN 명령어 결합
+
+```text 
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg \
+    && rm -rf /var/liv/apt/lists/*
+```
+
+- 보안 설정
+    - root 권한 회피: `USER 1001`
+    - 파일 권한 설정: `chmod`로 실행 권한 제한
+    - 환경 변수 암호화: `ENV` 대신 런타임 시 주입
+- .dockerignore 활용
+
+```text 
+.git
+*.iml
+target/
+.DS_Store
+```
+
 ## 도커 빌드 순서
 
 파이썬 환경에서 flask를 이용하여 간단히 실행해 보겠습니다.
@@ -131,19 +163,21 @@ CMD ["python", "app.py"]
 flask==3.0.0
 ```
 
-4️⃣ 도커 이미지 빌드 및 실행
+### 도커 이미지 빌드 및 컨테이너 실행
+
+1️⃣ 도커 이미지 빌드 및 실행
 
 ```bash
 docker build --platform linux/amd64 -t myapp:1.0 .
 ```
 
-5️⃣ 도커 컨테이너 실행(포트 매핑)
+2️⃣ 도커 컨테이너 실행(포트 매핑)
 
 ```bash
 docker run -p 4000:80 --rm myapp:1.0
 ```
 
-6️⃣ 서버 확인
+3️⃣ 서버 확인
 
 [[127.0.0.1:4000](http://localhost:4000)] 접속
 
@@ -157,19 +191,19 @@ docker run -p 4000:80 --rm myapp:1.0
 docker run -d -p 8080:80 --name my-python myapp:1.0 .
 ```
 
-| 옵션          | 설명                                                                 | 예시                                  |
-|---------------|----------------------------------------------------------------------|---------------------------------------|
-| **`-d`**      | 백그라운드 실행 (데몬 모드)                                         | `docker run -d nginx`                 |
-| **`-it`**     | 인터랙티브 모드 (터미널 연결 + TTY 할당)                            | `docker run -it ubuntu /bin/bash`     |
-| **`--name`**  | 컨테이너 이름 지정                                                  | `docker run --name my-app my-image`   |
-| **`-p`**      | 포트 매핑 (`호스트포트:컨테이너포트`)                               | `docker run -p 8080:80 nginx`         |
-| **`-v`**      | 볼륨/디렉토리 마운트 (`호스트경로:컨테이너경로`)                    | `docker run -v /data:/app/data redis` |
-| **`--rm`**    | 컨테이너 종료 시 자동 삭제                                          | `docker run --rm alpine echo "hello"` |
-| **`-e`**      | 환경 변수 설정 (`KEY=VALUE`)                                        | `docker run -e "ENV=prod" my-app`     |
-| **`--network`**| 네트워크 설정 (기본: `bridge`, `host`, `none` 등)                   | `docker run --network=host my-app`    |
-| **`--restart`**| 재시작 정책 (`no`, `on-failure`, `always`, `unless-stopped`)        | `docker run --restart=always my-app`  |
-| **`--cpus`**  | CPU 리소스 제한 (예: `1.5` → 1.5코어)                              | `docker run --cpus=2 my-app`          |
-| **`--memory`**| 메모리 제한 (`512m`, `2g` 등)                                      | `docker run --memory=1g my-app`       |
+|옵션| 설명|예시|
+|:--|:--|:--|
+|**`-d`**|백그라운드 실행 (데몬 모드)|`docker run -d nginx`|
+|**`-it`**|인터랙티브 모드 (터미널 연결 + TTY 할당)|`docker run -it ubuntu /bin/bash`|
+|**`--name`**|컨테이너 이름 지정|`docker run --name my-app my-image`|
+|**`-p`**|포트 매핑 (`호스트포트:컨테이너포트`)|`docker run -p 8080:80 nginx`|
+|**`-v`**|볼륨/디렉토리 마운트 (`호스트경로:컨테이너경로`)|`docker run -v /data:/app/data redis`|
+|**`--rm`**|컨테이너 종료 시 자동 삭제|`docker run --rm alpine echo "hello"`|
+|**`-e`**| 환경 변수 설정 (`KEY=VALUE`)|`docker run -e "ENV=prod" my-app`|
+|**`--network`**|네트워크 설정 (기본: `bridge`, `host`, `none` 등)|`docker run --network=host my-app`|
+|**`--restart`**|재시작 정책<br>(`no`, `on-failure`, `always`, `unless-stopped`)|`docker run --restart=always my-app`|
+|**`--cpus`**|CPU 리소스 제한 (예: `1.5` → 1.5코어)|`docker run --cpus=2 my-app`|
+|**`--memory`**|메모리 제한 (`512m`, `2g` 등)|`docker run --memory=1g my-app`|
 
 
 ✅ 이미지 목록 조회
