@@ -205,6 +205,28 @@ docker run -d -p 8080:80 --name my-python myapp:1.0 .
 |**`--cpus`**|CPU 리소스 제한 (예: `1.5` → 1.5코어)|`docker run --cpus=2 my-app`|
 |**`--memory`**|메모리 제한 (`512m`, `2g` 등)|`docker run --memory=1g my-app`|
 
+✅ 컨테이너 종료 
+
+```bash 
+# 단일 컨테이너 종료
+docker stop ${Container ID}
+# 타임아웃 시간 변경
+docker stop --time=30 ${Container ID}
+```
+
+⚠️ 겅재 종료: 파일 시스템 손상 가능성이 있으므로 최후의 수단
+
+```bash
+# 강제 종료
+docker kill ${Container ID}
+```
+
+✅ 컨테이너 삭제
+
+```bash
+docker rm ${Container ID}
+```
+
 
 ✅ 이미지 목록 조회
 
