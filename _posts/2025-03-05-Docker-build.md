@@ -171,6 +171,9 @@ flask==3.0.0
 docker build --platform linux/amd64 -t myapp:1.0 .
 ```
 
+> 맨 뒤에 빌드 컨텍스트 경로에서 공백점(` .`)의 역활은 Dockerfile 및 관련 파일이 위치한 루트 디렉터리를 지정한다. 생략 시 `Dockerfile`을 찾지 못해 빌드 실패가 발생하니 반드시 붙여야 합니다.
+{: .prompt-warning }
+
 2️⃣ 도커 컨테이너 실행(포트 매핑)
 
 ```bash
