@@ -23,15 +23,16 @@ Dokcer Compse는 다중 컨테이너 도커 애플리케이션을 정의하고 �
 
 ```yml
 version: "3.9"
+
 services:
-	web:
-		build: .
+    web:
+        build: .
 		ports:
-			- "5000:5000"
-		depends_on:
-			- redis
-	redis:
-		image: "redis:alpine"
+          - "5000:5000"
+       depends_on:
+           - redis
+    redis:
+       image: "redis:alpine"
 ```
 
 - `services`: 실행할 컨테이너 정의
