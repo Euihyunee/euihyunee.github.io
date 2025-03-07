@@ -451,7 +451,8 @@ docker run -d \
 
 실행에 성공하면 다음과 같이 동작합니다.
 
-[![docker_actions](https://www.youtube.com/watch?v=IjmUZMXdg4o)](https://youtu.be/IjmUZMXdg4o)
+![docker_actions.gif](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/docker_actions.gif?raw=true)
+
 
 
 ## Compose로 한 번에 하기
