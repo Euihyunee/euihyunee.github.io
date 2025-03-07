@@ -451,7 +451,7 @@ docker run -d \
 
 실행에 성공하면 다음과 같이 동작합니다.
 
-<video controls src="<>"></video>" title="Title"></>
+[![docker_actions](https://www.youtube.com/watch?v=IjmUZMXdg4o)](https://youtu.be/IjmUZMXdg4o)
 
 
 ## Compose로 한 번에 하기
