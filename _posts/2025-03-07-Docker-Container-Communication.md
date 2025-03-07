@@ -1,5 +1,5 @@
 ---
-title: "💬 도커 컨테이너끼리 통신하는 방법"
+title: "💬 도커 컨테이너끼리 통신하는 방법(작성중)"
 date: 2025-03-07 16:05 +0900
 categories: [CS]
 tags: [Docker, Docker Compose, Docker Container, Docker Network]
@@ -60,6 +60,49 @@ docker run -d \
   -p 8080:8080 \
   spring-image
 ```
+
+<details>
+<summary>User & LoginRequest</summary>
+<div markdown="1">
+
+```java
+@Entity
+@Getter @Setter @NoArgsConstructor
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true)
+    private String username;
+
+    private String password;
+}
+
+@Getter @Setter
+public class LoginRequest {
+
+    private String username;
+    private String password;
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>UserRepository</summary>
+<div markdown="1">
+
+```java
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByUsername(String username);
+    boolean existsByUsername(String username);
+}
+```
+
+</div>
+</details>
 
 <details>
 <summary>UserController</summary>
@@ -132,7 +175,236 @@ public class WebConfig {
 </div>
 </details>
 
+<details>
+<summary>SecurityConfig</summary>
+<div markdown="1">
+
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable)  // CSRF 보호 비활성화
+                .cors(withDefaults())  // CORS 기본 설정 활성화
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/api/signup", "/api/login").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .formLogin(AbstractHttpConfigurer::disable)  // 폼 로그인 비활성화
+                .httpBasic(AbstractHttpConfigurer::disable);  // 기본 HTTP 인증 비활성화
+
+        return http.build();
+    }
+}
+```
+
+</div>
+</details>
+
 ## 3️⃣ Front-End 컨테이너 실행
+
+전체 코드 
+
+<details>
+<summary>login.html</summary>
+<div markdown="1">
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>로그인</title>
+    <style>
+        .container { max-width: 400px; margin: 50px auto; }
+        input { margin: 10px 0; padding: 8px; width: 100%; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>로그인</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">로그인</button>
+        <p>계정이 없으신가요? <a href="signup.html">회원가입</a></p>
+    </div>
+    <script>
+        async function login() {
+            const user = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+            
+            const response = await fetch('http://localhost:8080/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(user)
+            });
+            
+            if (response.status === 404) {
+                alert('존재하지 않는 아이디입니다');
+            } else if (response.status === 401) {
+                alert('비밀번호가 틀렸습니다');
+            } else if (response.ok) {
+                window.location.href = `success.html?username=${user.username}`;
+            }
+        }
+    </script>
+</body>
+</html>
+
+```
+
+</div>
+</details>
+
+<details>
+<summary>signup.html</summary>
+<div markdown="1">
+
+```html
+<!-- signup.html 수정 버전 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입</title>
+    <style>
+        .container { max-width: 400px; margin: 50px auto; }
+        input { margin: 10px 0; padding: 8px; width: 100%; }
+        button { padding: 10px 20px; }
+        .login-link { margin-top: 20px; display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>회원가입</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="signup()">가입하기</button>
+        <a href="login.html" class="login-link">이미 계정이 있으신가요? 로그인</a>
+    </div>
+    <script>
+        async function signup() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                alert('모든 필드를 입력해주세요');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:8080/api/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.text();
+                
+                if (response.ok) {
+                    alert('가입 성공! 로그인 페이지로 이동합니다');
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 300);
+                } else {
+                    alert(`가입 실패: ${result}`);
+                }
+            } catch (error) {
+                alert('서버 연결에 실패했습니다');
+            }
+        }
+    </script>
+</body>
+</html>
+
+```
+
+</div>
+</details>
+
+<details>
+<summary>success.html</summary>
+<div markdown="1">
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>로그인 성공</title>
+    <style>
+        .container { max-width: 600px; margin: 100px auto; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 로그인 성공!</h1>
+        <p id="welcomeMessage"></p>
+        <a href="login.html">로그아웃</a>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        document.getElementById('welcomeMessage').textContent = 
+            `${username}님, 환영합니다!`;
+    </script>
+</body>
+</html>
+
+```
+
+</div>
+</details>
+
+<details>
+<summary>package.json</summary>
+<div markdown="1">
+
+```json
+{
+    "name": "html-server",
+    "version": "1.0.0",
+    "description": "HTML server for Docker",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+}
+```
+
+</div>
+</details>
+
+
+<details>
+<summary>server.js</summary>
+<div markdown="1">
+
+```js
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static(path.join(__dirname, 'html')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'login.html'));
+});
+
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+
+```
+
+</div>
+</details>
 
 ✅ Front 서버 Dockerfile 작성
 
@@ -167,3 +439,6 @@ docker run -d \
     -p 3000:3000 \
     front-image
 ```
+
+## Compose로 한 번에 하기
+
