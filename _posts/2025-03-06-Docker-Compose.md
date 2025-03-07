@@ -27,12 +27,12 @@ version: "3.9"
 services:
     web:
         build: .
-		ports:
-          - "5000:5000"
-       depends_on:
-           - redis
-    redis:
-       image: "redis:alpine"
+        ports:
+            - "5000:5000"
+        depends_on:
+            - redis
+        redis:
+            image: "redis:alpine"
 ```
 
 - `services`: 실행할 컨테이너 정의
