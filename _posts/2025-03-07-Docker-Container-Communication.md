@@ -5,7 +5,7 @@ categories: [CS]
 tags: [Docker, Docker Compose, Docker Container, Docker Network]
 ---
 
-도커 컨테이너(프론트엔드-백엔드-MySQL)을 각각 띄워서 서로 통신해보자
+> 도커 컨테이너(프론트엔드-백엔드-MySQL)을 각각 띄워서 서로 통신해보자
 
 ## 1️⃣ MySQL 컨테이너 실행 
 
@@ -439,6 +439,20 @@ docker run -d \
     -p 3000:3000 \
     front-image
 ```
+
+
+이렇게 실행하고 나면 docker의 dashboard에 이렇게 나옵니다. 만약에 옆에 초록불이 안 나온다면 로그를 확인하셔서 오류를 찾아보세요. 저는 다음과 같은 에러가 나왔습니다.
+
+1. Spring Boot: SQL Server Error MySQL 서버를 못 찾아 발생하는 이슈
+2. Front-End: CORS 문제. Container 자체는 실행 중이지만 Spring Boot Container에 API를 요청했을 때 CORS로 인해 요청이 거부됩니다.
+3. Front-End: npm run failed. `server.js` 파일이 잘못되어 실행이 안 되는 경우입니다.
+
+![docker_board.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/docker_board.png?raw=true)
+
+실행에 성공하면 다음과 같이 동작합니다.
+
+<video controls src="<>"></video>" title="Title"></>
+
 
 ## Compose로 한 번에 하기
 
