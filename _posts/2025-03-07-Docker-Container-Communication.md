@@ -5,9 +5,47 @@ categories: [CS]
 tags: [Docker, Docker Compose, Docker Container, Docker Network]
 ---
 
-> 도커 컨테이너(프론트엔드-백엔드-MySQL)을 각각 띄워서 서로 통신해보자
+> 도커를 실행하면 호스트 시스템 내에서 가상 네트워크를 생성할 수 있습니다. 이 네트워크는 내부망에서만 사용할 수 있는 IP이므로 외부와 통신하기 위해 별도의 연결이 필요합니다. 또한 컨테이너에 내부에 있는 특정 네트워크를 연결하여 IP를 할당받을 수 있습니다. 같은 네트워크에 있는 컨테이너들은 서로 통신할 수 있게 됩니다. 이 글에서는 도커 네트워크를 이용하여 컨테이너가 통신하는 방법을 알아보겠습니다.
 
-## 1️⃣ MySQL 컨테이너 실행 
+
+## 도커 네트워크란?
+
+`도커 네트워크(Docker Network)`란 격리된 컨테이너 간의 통신을 가능하게 하는 가상의 네트워크 인프라입니다. 이를 통해 여러 컨테이너가 서로 안전하고 효율적으로 통신할 수 있습니다. 도커 네트워크는 다양한 드라이버를 지원하며, 주로 `bridge, host, none` 네트워크가 기본적으로 생성됩니다.
+
+![docker_network.png](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/docker_network.png?raw=true)
+
+- `veth`: 각 컨테이너와 브리지를 연결하는 가상의 이더넷 케이블입니다. 
+- `eth0`: 컨테이너 내부에서 네트워크 통신을 위한 인터페이스입니다. 
+- `Host eth0`: 호스트의 가상 네트워크 인터페이스로, 외부 네트워크와의 통신을 담당합니다.
+
+### 도커 네트워크 드라이버
+
+1. 브리지 네트워크(Bridge Network)
+    - 도커를 설치하면 기본적으로 `docker0`라는 브리지 네트워크가 자동으로 생성됩니다. 컨테이너를 생성할 때 네트워크를 지정하지 않으면 기본적으로 이 `docker0` 브리지에 연결됩니다. 위 그림에서는 각 컨테이너마다 브리지를 지정했습니다.
+    - 브리지 네트워크로 연결되면 컨테이너 간 통신을 가능하게 하며, 격리된 환경에서 실행할 수 있습니다. 사용자 정의 브리지(위 그림처럼)를 생성하면 컨테이너 이름으로 DNS 해석이 가능하여 더 편리한 통신을 제공할 수 있습니다.
+2. 호스트 네트워크(Host Network)
+    - 호스트 네트워크는 컨테이너를 생성할 때 `--network host` 옵션을 명시적으로 지정해야 사용됩니다. 기본적으로 연결되지 않습니다.
+    - 이는 컨테이너가 호스트의 네트워크 스택을 직접 사용할 때 사용됩니다. 호스트와 동일한 IP 주소를 공유하지만 네트워크 격리가 없습니다.
+3. None 네트워크
+    - None 네트워크는 컨테이너를 완전히 격리하여 외부 네트워크와의 연결을 차단합니다. 이 모드에서는 루프백 인터페이스(`IO`)만 활성화됩니다.
+    - 보안이 중요한 곳에서 외부 공격을 방지하거나, 네트워크(디버깅 or 없는) 환경에서 테스트할 때 사용하거나 외부 의존성이 없는 독립적인 컨테이너 실행 시 활용됩니다.
+
+### 도커 네트워크 드라이버의 종류
+
+|드라이버|설명|사용 사례|
+|:--|:--|:--|
+|bridge|기본 네트워크 드라이버로, 컨테이너 간 통신을 가능하게 하며 외부와도 연결 가능.|단일 호스트 내 컨테이너 간 통신|
+|host|컨테이너가 호스트의 네트워크 스택을 직접 사용.|성능 최적화가 필요한 경우|
+|none|컨테이너를 완전히 격리하여 네트워크 연결을 비활성화.|보안 테스트 또는 독립적인 실행 환경|
+|overlay|여러 호스트의 컨테이너를 연결하여 Swarm 서비스 지원.|멀티 호스트 통신 및 클러스터링.|
+|macvlan|컨테이너에 MAC 주소를 할당하여 물리적 장치처럼 작동.|레거시 애플리케이션 또는 VM 환경 대체.|
+|ipvlan|IPv4/IPv6 주소를 완전히 제어하며 VLAN 태깅 지원.|VLAN 및 레이어 2/3 통합이 필요한 환경.|
+
+## 도커 개별 컨테이너로 실행
+
+Spring Boot 컨테이너, MySQL 데이터베이스 컨테이너, Front-End 컨테이너를 생성하여 개별적으로 실행해보겠습니다.
+
+### 1️⃣ MySQL 컨테이너 실행 
 
 ```bash
 # DB/BackEnd 컨테이너 네트워크 
@@ -26,7 +64,7 @@ docker run -d \
     mysql:8.0
 ```
 
-## 2️⃣ Spring Boot 컨테이너 실행
+### 2️⃣ Spring Boot 컨테이너 실행
 
 ✅ Spring Boot의 Dockerfile 작성
 
@@ -204,9 +242,42 @@ public class SecurityConfig {
 </div>
 </details>
 
-## 3️⃣ Front-End 컨테이너 실행
+### 3️⃣ Front-End 컨테이너 실행
 
-전체 코드 
+
+✅ Front 서버 Dockerfile 작성
+
+여기서는 HTML 파일을 NPM으로 실행했습니다.
+
+```text
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package.json package.json
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+```
+
+✅ Front의 Dockerfile 이미지 빌드 및 컨테이너 실행
+
+```bash
+# Front Dockerfile 이미지 빌드
+docker build -t front-image .
+
+# 컨테이너 실행
+docker run -d \
+    --name front-container \
+    --network front-spring-net \
+    -p 3000:3000 \
+    front-image
+```
 
 <details>
 <summary>login.html</summary>
@@ -405,40 +476,6 @@ app.listen(3000, () => {
 
 </div>
 </details>
-
-✅ Front 서버 Dockerfile 작성
-
-여기서는 HTML 파일을 NPM으로 실행했습니다.
-
-```text
-FROM node:18-alpine
-
-WORKDIR /app
-
-COPY package.json package.json
-
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
-```
-
-✅ Front의 Dockerfile 이미지 빌드 및 컨테이너 실행
-
-```bash
-# Front Dockerfile 이미지 빌드
-docker build -t front-image .
-
-# 컨테이너 실행
-docker run -d \
-    --name front-container \
-    --network front-spring-net \
-    -p 3000:3000 \
-    front-image
-```
 
 
 이렇게 실행하고 나면 docker의 dashboard에 이렇게 나옵니다. 만약에 옆에 초록불이 안 나온다면 로그를 확인하셔서 오류를 찾아보세요. 저는 다음과 같은 에러가 나왔습니다.
