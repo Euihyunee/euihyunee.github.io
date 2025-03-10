@@ -176,7 +176,7 @@ docker compose up -d
 docker compose logs -f app
 ```
 
-이렇게 Docker Compose를 사용하면 `--nettwork` or `--lin` 옵션을 이용해서 MySQL과 연결할 필요가 없어집니다. Docker Compose가 자동으로 네트워크 인프라를 관리하기 때문에 개발자는 인프라 관리보다 애플리케이션 로직에 집중할 수 있습니다.
+이렇게 Docker Compose를 사용하면 `--nettwork` or `--link` 옵션을 이용해서 MySQL과 연결할 필요가 없어집니다. Docker Compose가 자동으로 네트워크 인프라를 관리하기 때문에 개발자는 인프라 관리보다 애플리케이션 로직에 집중할 수 있습니다.
 
 |구분|Docker|Docker Compose|
 |:--|:--|:--|
