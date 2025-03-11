@@ -567,7 +567,9 @@ docker-compose up -d
 이렇게 하면 제대로 실행됩니다.
 
 ```bash 
-Error response from daemon: Conflict. The container name "/mysql-container" is already in use by container "71e9f0cade642a38c761537070d2e53505ced40622ead282dee3f8c47cc4733c". You have to remove (or rename) that container to be able to reuse that name.
+Error response from daemon: Conflict. 
+The container name "/mysql-container" is already in use by container "71e9f0cade642a38c761537070d2e53505ced40622ead282dee3f8c47cc4733c". 
+You have to remove (or rename) that container to be able to reuse that name.
 ```
 
 > 위와 같은 에러 발생 시 개별 도커 파일 실행했을 때 나온 MySQL 컨테이너가 존재해서 그렇습니다. docker-compose.yml 파일에서 name 부분을 변경하거나 도커에서 기존의 mysql-container를 삭제하고 실행하면 정상적으로 작동합니다.
