@@ -491,5 +491,90 @@ app.listen(3000, () => {
 ![docker_actions-ezgif.com-speed.gif](https://github.com/Euihyunee/euihyunee.github.io/blob/main/_posts/img/docker_actions-ezgif.com-speed.gif?raw=true)
 
 
-## Compose로 한 번에 하기
+## Compose로 한 번에 실행하기
 
+먼저 프로젝트 구조 입니다.
+
+```text
+Docker-Test/
+├── docker_front/
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+├── docker_spring/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   └── resources/
+│   │   └── test/
+│   │       ├── java/
+│   │       └── resources/
+│   ├── pom.xml (또는 build.gradle)
+│   └── Dockerfile
+├── README.md
+└── docker-compose.yml (전체 프로젝트용)
+```
+
+### docker-compose.yml 파일 작성하기
+
+여기서는 기존에 작성한 도커 파일을 이용하여 docker-compose.yml 파일을 작성해보겠습니다.
+
+```
+version: '3'
+services:
+  front-end-app:
+    build: ./docker_front
+    ports:
+      - "3000:3000"
+    depends_on:
+      - spring-boot-app
+    restart: always
+
+  spring-boot-app:
+    build: ./docker_spring
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    restart: always
+
+  mysql:
+    container_name: mysql-container
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=simple_login
+```
+
+1. `build`: 도커 파일이 존재하는 경로를 작성
+2. `ports`: 도커 파일에 포트가 명시되어 있어 docker-compose.yml 파일에는 작성 안 해도 됩니다. 다만 호스트 머신과 컨테이너 간 포트 매핑, 명시적이고 유연한 설정, 다양한 환경에 맞게 사용하기 위해 사용합니다.
+3. `depends_on`: 적혀 있는 서비스가 실행된 후 시작됩니다. 예시로 MySQL이 실행되기 전에 spring이 실행된다면 SQLError가 발생할 것입니다.
+4. `restart:`: 컨테이너가 중지되었을 때 재시작 정책입니다.
+    - no: 기본 정책으로, 컨테이너가 중지되거나 충돌해도 재시작하지 않습니다.
+    - always: 컨테이너가 중지되면 항상 재시작합니다. Docker 데몬이 재시작되거나 호스트 머신이 재부팅되더라도 재시작됩니다.
+    - on-failure: 컨테이너가 비정상적으로 종료(비정상 종료 코드)되면 재시작합니다. 최대 재시작 시도를 지정할 수 있습니다.
+    - unless-stopped: 컨테이너가 수동으로 중지되지 않는 한 항상 재시작합니다. Docker 데몬이 재시작되더라도 재시작되지 않습니다.
+5. `environment`: MySQL 데이터베이스의 환경 변수를 설정합니다.
+
+### docker-compose.yml 파일 실행
+
+docker-compose.yml 파일이 있는 곳(프로젝트 최상위)으로 이동하여 다음 명령어를 입력합니다.
+
+```bash
+docker-compose up -d 
+```
+
+이렇게 하면 제대로 실행됩니다.
+
+```bash 
+Error response from daemon: Conflict. The container name "/mysql-container" is already in use by container "71e9f0cade642a38c761537070d2e53505ced40622ead282dee3f8c47cc4733c". You have to remove (or rename) that container to be able to reuse that name.
+```
+
+> 위와 같은 에러 발생 시 개별 도커 파일 실행했을 때 나온 MySQL 컨테이너가 존재해서 그렇습니다. docker-compose.yml 파일에서 name 부분을 변경하거나 도커에서 기존의 mysql-container를 삭제하고 실행하면 정상적으로 작동합니다.
+{: .prompt-warning }
+
+## 마치며
+
+여기까지 도커 파일과 도커 컴포즈를 이용해서 컨테이너 간 통신에 대해서 알아보았습니다. 호스트와 연결되는 포트부터 내부에서 어떻게 통신하는 지 알 수 있었습니다. 
+
+학습하면서 필요한 부분이 많이 있다는 것을 느꼈습니다. CORS 설정을 Front-end의 포트에 따라 달리 해야 하는 점, 데이터베이스는 보통 컨테이너를 만들어 놓고 docker-compose로 연결한다는 점, 다양한 환경에서 일관성을 유지하기 위해 어떻게 해야 하는 지 등에 대해서 좀 더 학습이 필요하다는 것을 알게되었습니다. 이와 관련된 부분은 다음에 알아보겠습니다.
